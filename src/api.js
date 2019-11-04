@@ -7,15 +7,18 @@ const getItems = function () {
 function createItem (name){
   let newItem = {
     name,
-  }
-  JSON.stringify(newItem);
+  };
+  
+  let newItemJSON = JSON.stringify(newItem);
   console.log(newItem);
   return fetch(`${BASE_URL}/items`, 
-  {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: newItem,
-  });
+    {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+      body: newItemJSON,
+    });
 }
 
 
