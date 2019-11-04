@@ -13,8 +13,8 @@ function createItem (name){
   return fetch(`${BASE_URL}/items`, 
   {
     method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: newItem,
+    headers: new Headers ({'Content-Type': 'application/json'}),
+    body: newItem, 
   });
 }
 
